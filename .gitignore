@@ -30,6 +30,15 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.packages
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.lock
+*.lock.*
 
 # Symbolication related
 app.*.symbols
@@ -41,3 +50,25 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+*.env
+firebase-debug.log
+
+# Flutter build files
+build/
+ios/Pods
+*.xcuserstate
+
+# FlutterFire and Firebase
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+android/.gradle/
+android/app/build
+android/app/google-services.json
+android/local.properties
+*.keystore
+
+# FlutterFire CLI configuration
+.firebase/
+firebase.json
+firebaserc
