@@ -1,4 +1,4 @@
-package com.example.sneakout_flutter_firebase
+package com.sneakout.app
 
 import io.flutter.embedding.android.FlutterActivity
 

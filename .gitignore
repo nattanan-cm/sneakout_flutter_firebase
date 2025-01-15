@@ -51,8 +51,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+#
 *.env
 firebase-debug.log
+shared/utils/extensions/size.dart
 
 # Flutter build files
 build/
