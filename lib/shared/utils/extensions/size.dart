@@ -16,7 +16,7 @@ extension SizeTheme on Size {
   static double sixXL = 32;
 }
 
-extension FlexScale<T> on BuildContext {
+extension SNOScale<T> on BuildContext {
   Size get headerSize => Size(double.maxFinite, heightResponsive(100));
   double get activityHeight => heightResponsive(40);
   double get gapContentHeight => heightResponsive(20);
@@ -58,22 +58,11 @@ extension ResponsiveDevice on ResponsiveBreakpoints {
   // Breakpoints
   static List<Breakpoint> breakpoints = [
     const Breakpoint(start: minMobile, end: maxMobile, name: MOBILE),
-    const Breakpoint(start: minTablet, end: maxTablet, name: TABLET),
-    const Breakpoint(start: minDesktop, end: maxDesktop, name: DESKTOP),
-    const Breakpoint(start: min4K, end: max4K, name: '4K'),
   ];
 
-  // Size min/max Devices
   static const double minMobile = 0;
   static const double maxMobile = 450;
-  static const double minTablet = 451;
-  static const double maxTablet = 800;
-  static const double minDesktop = 801;
-  static const double maxDesktop = 1920;
-  static const double min4K = 1921;
-  static const double max4K = double.infinity;
 
-  // Size Devices
   static const double widthMoblie = 390;
   static const double heightMoblie = 844;
 }

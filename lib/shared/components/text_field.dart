@@ -25,7 +25,7 @@ class SNOTextField extends StatelessWidget {
     this.onChangedObscure,
     this.width = 330,
     this.height = 53,
-    this.showCursor = false,
+    this.showCursor = true,
   });
 
   @override
@@ -33,9 +33,10 @@ class SNOTextField extends StatelessWidget {
     return Container(
       width: context.widthResponsive(width),
       height: context.heightResponsive(height),
+      alignment: Alignment.center,
       padding: EdgeInsets.symmetric(
-          horizontal: context.widthResponsive(18),
-          vertical: context.heightResponsive(10)),
+        horizontal: context.widthResponsive(18),
+      ),
       decoration: BoxDecoration(
         color: SNOColors.inputBackground,
         borderRadius: BorderRadius.circular(10),
@@ -43,21 +44,35 @@ class SNOTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         showCursor: showCursor,
-        maxLines: null,
-        minLines: null,
-        style: const TextStyle(color: SNOColors.white, fontSize: 12),
-        expands: true,
+        textAlign: TextAlign.start,
+        textAlignVertical: onChangedObscure != null
+            ? (obscureText && controller?.value.text == ''
+                ? TextAlignVertical.bottom
+                : TextAlignVertical.center)
+            : null,
+        cursorColor: SNOColors.springGreen,
+        style: TextStyle(
+          color: SNOColors.white,
+          fontSize: context.widthResponsive(14),
+        ),
         decoration: InputDecoration(
           hintText: hint,
-          prefixIcon: prefixIcon,
+          hintStyle: TextStyle(
+            color: SNOColors.white.withOpacity(0.4),
+            fontSize: context.widthResponsive(12),
+          ),
+          icon: SizedBox(
+            width: context.widthResponsive(25),
+            child: Center(child: prefixIcon),
+          ),
           border: InputBorder.none,
-          suffix: onChangedObscure != null
+          suffixIcon: onChangedObscure != null
               ? GestureDetector(
                   child: Icon(
-                    obscureText == true
-                        ? Icons.visibility_off
-                        : Icons.visibility_rounded,
+                    color: SNOColors.white,
+                    obscureText ? Icons.visibility : Icons.visibility_off,
                   ),
+                  onTap: () => onChangedObscure!(!obscureText),
                 )
               : null,
         ),

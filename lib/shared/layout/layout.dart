@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/size.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/path/path.dart';
@@ -38,14 +39,18 @@ class SNOLayout extends StatelessWidget {
                     Positioned(
                       right: 1,
                       left: 1,
-                      child: SNOIcon.logo,
+                      child: SvgPicture.asset(
+                        SvgPaths.logo,
+                      ),
                     ),
                     if (showAvatar)
                       GestureDetector(
                         onTap: onAvatar,
                         child: Positioned(
                           right: context.widthResponsive(30),
-                          child: SNOIcon.boy,
+                          child: SvgPicture.asset(
+                            SvgPaths.boy,
+                          ),
                         ),
                       ),
                   ]),
@@ -55,9 +60,11 @@ class SNOLayout extends StatelessWidget {
         backgroundColor: SNOColors.background,
         resizeToAvoidBottomInset: false,
         body: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: context.heightResponsive(20),
-            horizontal: context.widthResponsive(30),
+          padding: EdgeInsets.only(
+            top: context.heightResponsive(20),
+            bottom: context.heightResponsive(50),
+            left: context.widthResponsive(30),
+            right: context.widthResponsive(30),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
