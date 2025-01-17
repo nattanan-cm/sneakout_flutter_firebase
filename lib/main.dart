@@ -25,5 +25,6 @@ class SneakOutApp extends StatelessWidget {
             ),
         onGenerateRoute: SNORouter.generateRoute,
         initialRoute: SNORouteName.login);
+    // initialRoute: SNORouteName.home);
   }
 }

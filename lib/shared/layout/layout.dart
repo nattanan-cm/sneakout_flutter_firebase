@@ -39,17 +39,27 @@ class SNOLayout extends StatelessWidget {
                     Positioned(
                       right: 1,
                       left: 1,
+                      top: 6,
                       child: SvgPicture.asset(
                         SvgPaths.logo,
+                        width: context.widthResponsive(124),
+                        height: context.heightResponsive(28),
                       ),
                     ),
                     if (showAvatar)
-                      GestureDetector(
-                        onTap: onAvatar,
-                        child: Positioned(
-                          right: context.widthResponsive(30),
-                          child: SvgPicture.asset(
-                            SvgPaths.boy,
+                      Positioned(
+                        right: 20,
+                        top: 1,
+                        child: GestureDetector(
+                          onTap: onAvatar,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                                context.widthResponsive(40) / 2),
+                            child: Image.asset(
+                              ImagePaths.avatar,
+                              width: context.widthResponsive(40),
+                              height: context.widthResponsive(40),
+                            ),
                           ),
                         ),
                       ),
@@ -61,7 +71,7 @@ class SNOLayout extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         body: Padding(
           padding: EdgeInsets.only(
-            top: context.heightResponsive(20),
+            top: !(showLogo || showAvatar) ? context.heightResponsive(20) : 0.0,
             bottom: context.heightResponsive(50),
             left: context.widthResponsive(30),
             right: context.widthResponsive(30),
@@ -69,7 +79,7 @@ class SNOLayout extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              body,
+              Expanded(child: body),
               if (actions != null) ...actions!,
             ],
           ),

@@ -46,7 +46,7 @@ class SNOTextField extends StatelessWidget {
         showCursor: showCursor,
         textAlign: TextAlign.start,
         textAlignVertical: onChangedObscure != null
-            ? (obscureText && controller?.value.text == ''
+            ? (obscureText && controller?.value.text != ''
                 ? TextAlignVertical.bottom
                 : TextAlignVertical.center)
             : null,

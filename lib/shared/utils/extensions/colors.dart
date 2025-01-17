@@ -15,4 +15,5 @@ extension SNOColors on Colors {
   static const Color red = Color.fromRGBO(255, 0, 0, 1);
   static const Color green = Color.fromRGBO(0, 255, 0, 1);
   static const Color blue = Color.fromRGBO(0, 0, 255, 1);
+  static const Color grey = Color(0xFFD9D9D9);
 }

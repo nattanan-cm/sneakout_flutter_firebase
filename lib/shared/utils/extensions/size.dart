@@ -17,7 +17,7 @@ extension SizeTheme on Size {
 }
 
 extension SNOScale<T> on BuildContext {
-  Size get headerSize => Size(double.maxFinite, heightResponsive(100));
+  Size get headerSize => Size(double.maxFinite, heightResponsive(85));
   double get activityHeight => heightResponsive(40);
   double get gapContentHeight => heightResponsive(20);
   Size get bodySize => Size(

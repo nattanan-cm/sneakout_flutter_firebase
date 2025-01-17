@@ -8,4 +8,5 @@ class SvgPaths {
 
 class ImagePaths {
   static const iconSneaker = 'assets/images/icon_sneaker.jpg';
+  static const avatar = 'assets/images/avatar.jpg';
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneakout_flutter_firebase/screens/home.dart';
 import 'package:sneakout_flutter_firebase/screens/login.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
 
@@ -8,7 +9,7 @@ class SNORouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case SNORouteName.home:
-        return _route(Container(), settings);
+        return _route(const HomePage(), settings);
 
       case SNORouteName.login:
         return _route(const LoginPage(), settings);
