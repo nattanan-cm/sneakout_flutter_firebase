@@ -5,6 +5,7 @@ import 'package:sneakout_flutter_firebase/shared/components/text_field.dart';
 import 'package:sneakout_flutter_firebase/shared/layout/layout.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/size.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/path/path.dart';
+import 'package:sneakout_flutter_firebase/shared/utils/routes/route_name.dart';
 
 import '../shared/utils/extensions/colors.dart';
 
@@ -17,6 +18,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool obscureText = true;
+  TextEditingController email_ctl = TextEditingController();
+  TextEditingController pwd_ctl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: context.heightResponsive(17),
                       ),
                       hint: "EMAIL",
+                      controller: email_ctl,
                     ),
                     SizedBox(
                       height: context.heightResponsive(19),
@@ -67,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: context.heightResponsive(21),
                       ),
                       hint: "PASSWORD",
+                      controller: pwd_ctl,
                       obscureText: obscureText,
                       onChangedObscure: (value) {
                         obscureText = value;
@@ -82,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                     bottom: context.heightResponsive(18)),
                 child: SNOButton(
                   text: 'Test',
-                  onPressed: onLogin,
+                  onPressed: () => onLogin(email_ctl.text, pwd_ctl.text),
                   child: Text(
                     'LOG IN',
                     style: TextStyle(
@@ -127,7 +132,16 @@ class _LoginPageState extends State<LoginPage> {
     ));
   }
 
-  void onSignUp() {}
+  void onSignUp() {
+    Navigator.of(context).pushNamed(SNORouteName.register);
+  }
 
-  void onLogin() {}
+  void onLogin(String email, String password) {
+    // firebase auth
+    // if (false) {
+    // # alert "Login failed"
+    // }
+
+    Navigator.of(context).pushNamed(SNORouteName.home);
+  }
 }
