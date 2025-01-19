@@ -4,6 +4,8 @@ class SvgPaths {
   static const logoLarge = 'assets/svg/logo_large.svg';
   static const email = 'assets/svg/mail.svg';
   static const lock = 'assets/svg/lock.svg';
+  static const heart = 'assets/svg/heart.svg';
+  static const heart_filled = 'assets/svg/heart_filled.svg';
 }
 
 class ImagePaths {

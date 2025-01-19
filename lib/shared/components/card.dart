@@ -69,7 +69,7 @@ class SNOCard extends StatelessWidget {
                     height: context.heightResponsive(5),
                   ),
                   Text(
-                    '฿ ${hasDecimal ? price.toStringAsFixed(2) : price.toInt().toString()}',
+                    '฿ ${hasDecimal ? price.toStringAsFixed(2) : price.toInt()}',
                     style: TextStyle(
                         fontSize: context.widthResponsive(14),
                         fontWeight: FontWeight.bold,

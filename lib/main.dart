@@ -19,6 +19,7 @@ class SneakOutApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        scrollBehavior: ClampingScrollBehavior(),
         builder: (context, child) => ResponsiveBreakpoints.builder(
               child: child!,
               breakpoints: ResponsiveDevice.breakpoints,

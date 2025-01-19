@@ -84,14 +84,13 @@ class _LoginPageState extends State<LoginPage> {
                   top: context.heightResponsive(50),
                   bottom: context.heightResponsive(18)),
               child: SNOButton(
-                text: 'Test',
                 onPressed: () => onLogin(email_ctl.text, pwd_ctl.text),
                 child: Text(
                   'LOG IN',
                   style: TextStyle(
                       color: SNOColors.black,
                       fontSize: context.widthResponsive(16),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w500),
                 ),
               ),
             ),

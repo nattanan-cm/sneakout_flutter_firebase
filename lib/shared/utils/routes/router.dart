@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneakout_flutter_firebase/screens/detail.dart';
 import 'package:sneakout_flutter_firebase/screens/home.dart';
 import 'package:sneakout_flutter_firebase/screens/login.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
@@ -13,6 +14,9 @@ class SNORouter {
 
       case SNORouteName.login:
         return _route(const LoginPage(), settings);
+
+      case SNORouteName.detail:
+        return _route(const DetailPage(), settings);
 
       default:
         return _route(

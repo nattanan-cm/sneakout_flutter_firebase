@@ -72,7 +72,7 @@ class SNOLayout extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.only(
             top: !(showLogo || showAvatar) ? context.heightResponsive(20) : 0.0,
-            bottom: context.heightResponsive(50),
+            bottom: context.heightResponsive(40),
             left: context.widthResponsive(30),
             right: context.widthResponsive(30),
           ),
@@ -80,7 +80,18 @@ class SNOLayout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(child: body),
-              if (actions != null) ...actions!,
+              if (actions != null)
+                Padding(
+                  padding: EdgeInsets.only(top: context.heightResponsive(20)),
+                  child: Row(
+                    mainAxisAlignment: actions!.length > 1
+                        ? MainAxisAlignment.spaceEvenly
+                        : MainAxisAlignment.center,
+                    children: [
+                      ...actions!,
+                    ],
+                  ),
+                )
             ],
           ),
         ),

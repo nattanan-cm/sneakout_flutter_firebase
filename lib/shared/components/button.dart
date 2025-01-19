@@ -3,19 +3,19 @@ import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/size.dart';
 
 class SNOButton extends StatelessWidget {
-  final String text;
   final VoidCallback onPressed;
   final double? width;
   final double? height;
   final Widget child;
+  final Gradient? gradient;
 
   const SNOButton({
     super.key,
-    required this.text,
     required this.onPressed,
     required this.child,
     this.width,
     this.height,
+    this.gradient,
   });
 
   @override
@@ -29,13 +29,14 @@ class SNOButton extends StatelessWidget {
           height: context.heightResponsive(defaultHeight),
           alignment: Alignment.center,
           padding: EdgeInsets.symmetric(
-            horizontal: context.widthResponsive(30),
+            horizontal: context.widthResponsive(15),
           ),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(colors: [
-              SNOColors.cyan,
-              SNOColors.springGreen,
-            ]),
+            gradient: gradient ??
+                const LinearGradient(colors: [
+                  SNOColors.cyan,
+                  SNOColors.springGreen,
+                ]),
             color: SNOColors.inputBackground,
             borderRadius: BorderRadius.circular(30),
           ),
