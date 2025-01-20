@@ -24,7 +24,7 @@ class SNOCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => onPressed(index),
       child: Container(
-        width: context.widthResponsive(135),
+        width: context.widthResponsive(125),
         height: context.heightResponsive(180),
         decoration: BoxDecoration(
           color: SNOColors.grey,

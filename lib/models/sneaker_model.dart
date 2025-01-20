@@ -24,7 +24,7 @@ class SneakerModel {
 class SneakerDetailModel extends SneakerModel {
   String? brand;
   String? sku;
-  String? colorway;
+  List<ColorWay>? colors;
   List<double>? sizes;
   SneakerDetailModel({
     super.label,
@@ -32,9 +32,18 @@ class SneakerDetailModel extends SneakerModel {
     super.imagePath,
     this.brand,
     this.sku,
-    this.colorway,
+    this.colors,
     this.sizes,
   });
 
   String sizeStr(double size) => super._checkDecimal(size);
+}
+
+class ColorWay {
+  String? label;
+  String? imagePath;
+  ColorWay({
+    this.label,
+    this.imagePath,
+  });
 }
