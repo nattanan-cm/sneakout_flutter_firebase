@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text(
                   'LOG IN',
                   style: TextStyle(
-                      color: SNOColors.black,
+                      color: Colors.black,
                       fontSize: context.widthResponsive(16),
                       fontWeight: FontWeight.w500),
                 ),
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               "Don't have an account? ",
               style: TextStyle(
-                color: SNOColors.white.withOpacity(0.4),
+                color: Colors.white.withOpacity(0.4),
                 fontSize: context.widthResponsive(15),
               ),
             ),

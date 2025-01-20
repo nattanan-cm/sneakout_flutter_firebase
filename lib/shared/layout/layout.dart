@@ -13,6 +13,7 @@ class SNOLayout extends StatelessWidget {
   final bool showLogo;
   final bool isLoading;
   final Widget body;
+  final bool hasHorizontalScroll;
   final List<Widget>? actions;
   const SNOLayout({
     super.key,
@@ -21,6 +22,7 @@ class SNOLayout extends StatelessWidget {
     this.showAvatar = false,
     this.showLogo = false,
     this.isLoading = false,
+    this.hasHorizontalScroll = false,
     required this.body,
     this.actions,
   });
@@ -34,7 +36,7 @@ class SNOLayout extends StatelessWidget {
             ? PreferredSize(
                 preferredSize: context.headerSize,
                 child: Padding(
-                  padding: EdgeInsets.only(top: context.heightResponsive(20)),
+                  padding: EdgeInsets.only(top: context.heightResponsive(30)),
                   child: Stack(children: [
                     Positioned(
                       right: 1,
@@ -71,10 +73,10 @@ class SNOLayout extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         body: Padding(
           padding: EdgeInsets.only(
-            top: !(showLogo || showAvatar) ? context.heightResponsive(20) : 0.0,
+            top: !(showLogo || showAvatar) ? context.heightResponsive(30) : 0.0,
             bottom: context.heightResponsive(40),
-            left: context.widthResponsive(30),
-            right: context.widthResponsive(30),
+            left: context.widthResponsive(15),
+            right: hasHorizontalScroll ? 0.0 : context.widthResponsive(15),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

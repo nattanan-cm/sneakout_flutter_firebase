@@ -7,7 +7,7 @@ class SNOCard extends StatelessWidget {
   final Image img;
   final int index;
   final String label;
-  final double price;
+  final String price;
   final void Function(int) onPressed;
 
   const SNOCard({
@@ -21,12 +21,11 @@ class SNOCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool hasDecimal = price != price.truncate();
     return GestureDetector(
       onTap: () => onPressed(index),
       child: Container(
-        width: context.widthResponsive(155),
-        height: context.heightResponsive(200),
+        width: context.widthResponsive(135),
+        height: context.heightResponsive(180),
         decoration: BoxDecoration(
           color: SNOColors.grey,
           borderRadius: BorderRadius.circular(5),
@@ -48,30 +47,31 @@ class SNOCard extends StatelessWidget {
               ),
             ),
             Container(
-              height: context.heightResponsive(60),
+              height: context.heightResponsive(70),
               width: context.widthResponsive(150),
               padding: EdgeInsets.symmetric(
                   vertical: context.heightResponsive(5),
                   horizontal: context.widthResponsive(8)),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     label,
                     style: TextStyle(
                       fontSize: context.widthResponsive(14),
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                     ),
-                    maxLines: 1,
+                    maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(
                     height: context.heightResponsive(5),
                   ),
                   Text(
-                    '฿ ${hasDecimal ? price.toStringAsFixed(2) : price.toInt()}',
+                    price,
                     style: TextStyle(
-                        fontSize: context.widthResponsive(14),
+                        fontSize: context.widthResponsive(12),
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF038C10)),
                   ),

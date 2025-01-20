@@ -29,8 +29,8 @@ class _DetailPageState extends State<DetailPage> {
               width: context.widthResponsive(80),
               height: context.heightResponsive(55),
               gradient: LinearGradient(colors: [
-                const Color(0xFFFF0099).withOpacity(0.7),
-                const Color(0xFFFF3D00).withOpacity(0.7),
+                const Color(0xFFFF0099).withValues(alpha: 0.7),
+                const Color(0xFFFF3D00).withValues(alpha: 0.7),
               ]),
               onPressed: () {
                 wishlist = !wishlist;
@@ -58,7 +58,7 @@ class _DetailPageState extends State<DetailPage> {
         ],
         body: Container(
           padding:
-              EdgeInsets.symmetric(horizontal: context.widthResponsive(15)),
+              EdgeInsets.symmetric(horizontal: context.widthResponsive(10)),
           width: double.infinity,
           child: SingleChildScrollView(
             child: Column(
@@ -66,8 +66,8 @@ class _DetailPageState extends State<DetailPage> {
               children: [
                 Container(
                   color: Colors.green,
-                  width: context.widthResponsive(300),
-                  height: context.widthResponsive(300),
+                  width: context.widthResponsive(340),
+                  height: context.widthResponsive(340),
                 ),
                 Container(
                   margin: EdgeInsets.only(
@@ -196,8 +196,8 @@ class _DetailPageState extends State<DetailPage> {
       Row row = Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(itemsPerRow, (index) {
-          int curr_idx = i + index;
-          if (curr_idx < 10) {
+          int currIdx = i + index;
+          if (currIdx < 10) {
             return Expanded(
                 child: Container(
               margin: EdgeInsets.all(
