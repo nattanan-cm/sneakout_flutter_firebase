@@ -6,6 +6,7 @@ class SvgPaths {
   static const lock = 'assets/svg/lock.svg';
   static const heart = 'assets/svg/heart.svg';
   static const heart_filled = 'assets/svg/heart_filled.svg';
+  static const back_circle = 'assets/svg/back_circle.svg';
 }
 
 class ImagePaths {

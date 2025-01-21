@@ -138,6 +138,6 @@ class _LoginPageState extends State<LoginPage> {
     // # alert "Login failed"
     // }
 
-    Navigator.of(context).pushNamed(SNORouteName.home);
+    Navigator.of(context).pushReplacementNamed(SNORouteName.home);
   }
 }

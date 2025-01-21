@@ -73,14 +73,29 @@ class SNOLayout extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         body: Padding(
           padding: EdgeInsets.only(
-            top: !(showLogo || showAvatar) ? context.heightResponsive(30) : 0.0,
-            bottom: context.heightResponsive(40),
+            top: !(showLogo || showAvatar) ? context.heightResponsive(20) : 0.0,
+            bottom: context.heightResponsive(30),
             left: context.widthResponsive(15),
             right: hasHorizontalScroll ? 0.0 : context.widthResponsive(15),
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              if (onBack != null)
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding:
+                        EdgeInsets.only(bottom: context.heightResponsive(20)),
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: SvgPicture.asset(
+                        SvgPaths.back_circle,
+                        width: context.widthResponsive(35),
+                        height: context.widthResponsive(35),
+                      ),
+                    ),
+                  ),
+                ),
               Expanded(child: body),
               if (actions != null)
                 Padding(

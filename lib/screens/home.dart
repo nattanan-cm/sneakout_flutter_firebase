@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sneakout_flutter_firebase/models/sneaker_model.dart';
 import 'package:sneakout_flutter_firebase/shared/components/card.dart';
 import 'package:sneakout_flutter_firebase/shared/layout/layout.dart';
-import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/size.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/routes/route_name.dart';
 

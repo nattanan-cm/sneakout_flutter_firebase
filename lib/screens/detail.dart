@@ -112,7 +112,9 @@ class _DetailPageState extends State<DetailPage> {
                                     : 0.0),
                             child: colorwayButton(
                                 isSelected: index == colorIdx,
-                                onPressed: () => onColorway(index)),
+                                onPressed: () => setState(() {
+                                      colorIdx = index;
+                                    })),
                           );
                         }).toList() ??
                         [],
@@ -130,7 +132,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: context.heightResponsive(8),
                 ),
                 Text(
-                  data.priceStr(),
+                  "฿ ${data.priceStr()}",
                   style: TextStyle(
                     color: SNOColors.deepGreen,
                     fontSize: context.widthResponsive(14),
@@ -303,12 +305,11 @@ class _DetailPageState extends State<DetailPage> {
 
   void onPurchase() {
     // add id to provider
-    Navigator.of(context).pushNamed(SNORouteName.payment);
-  }
 
-  void onColorway(int idx) {
-    colorIdx = idx;
-    setState(() {});
+    // if address is not provided nav to address page
+
+    // else nav to payment page
+    Navigator.of(context).pushNamed(SNORouteName.address);
   }
 
   void addToWishlist() {}

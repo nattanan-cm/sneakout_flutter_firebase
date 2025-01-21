@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sneakout_flutter_firebase/screens/detail.dart';
 import 'package:sneakout_flutter_firebase/screens/home.dart';
 import 'package:sneakout_flutter_firebase/screens/login.dart';
+import 'package:sneakout_flutter_firebase/screens/address.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
 
 import 'route_name.dart';
@@ -18,6 +20,9 @@ class SNORouter {
       case SNORouteName.detail:
         return _route(const DetailPage(), settings);
 
+      case SNORouteName.address:
+        return _route(const AddressPage(), settings);
+
       default:
         return _route(
             Scaffold(
@@ -31,5 +36,5 @@ class SNORouter {
   }
 
   static Route<dynamic> _route(Widget widget, RouteSettings settings) =>
-      MaterialPageRoute(builder: (context) => widget, settings: settings);
+      CupertinoPageRoute(builder: (context) => widget, settings: settings);
 }

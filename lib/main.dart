@@ -19,13 +19,18 @@ class SneakOutApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(
+            pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        })),
         scrollBehavior: ClampingScrollBehavior(),
         builder: (context, child) => ResponsiveBreakpoints.builder(
               child: child!,
               breakpoints: ResponsiveDevice.breakpoints,
             ),
         onGenerateRoute: SNORouter.generateRoute,
-        initialRoute: SNORouteName.login);
+        initialRoute: SNORouteName.address);
     // initialRoute: SNORouteName.home);
   }
 }
