@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
     return SNOLayout(
         showAvatar: true,
         showLogo: true,
+        showBack: false,
         hasHorizontalScroll: true,
         onAvatar: () => {},
         body: SingleChildScrollView(

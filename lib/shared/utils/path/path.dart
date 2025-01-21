@@ -7,6 +7,10 @@ class SvgPaths {
   static const heart = 'assets/svg/heart.svg';
   static const heart_filled = 'assets/svg/heart_filled.svg';
   static const back_circle = 'assets/svg/back_circle.svg';
+  static const paypal = 'assets/svg/paypal.svg';
+  static const master_card = 'assets/svg/master_card.svg';
+  static const visa = 'assets/svg/visa.svg';
+  static const cash = 'assets/svg/cash.svg';
 }
 
 class ImagePaths {

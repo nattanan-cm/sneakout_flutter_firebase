@@ -7,18 +7,18 @@ import 'package:sneakout_flutter_firebase/shared/utils/path/path.dart';
 import '../components/state.dart';
 
 class SNOLayout extends StatelessWidget {
-  final void Function()? onBack;
   final void Function()? onAvatar;
   final bool showAvatar;
   final bool showLogo;
   final bool isLoading;
+  final bool showBack;
   final Widget body;
   final bool hasHorizontalScroll;
   final List<Widget>? actions;
   const SNOLayout({
     super.key,
-    this.onBack,
     this.onAvatar,
+    this.showBack = true,
     this.showAvatar = false,
     this.showLogo = false,
     this.isLoading = false,
@@ -36,7 +36,7 @@ class SNOLayout extends StatelessWidget {
             ? PreferredSize(
                 preferredSize: context.headerSize,
                 child: Padding(
-                  padding: EdgeInsets.only(top: context.heightResponsive(30)),
+                  padding: EdgeInsets.only(top: context.heightResponsive(40)),
                   child: Stack(children: [
                     Positioned(
                       right: 1,
@@ -80,7 +80,7 @@ class SNOLayout extends StatelessWidget {
           ),
           child: Column(
             children: [
-              if (onBack != null)
+              if (showBack)
                 Align(
                   alignment: Alignment.topLeft,
                   child: Padding(

@@ -40,7 +40,6 @@ class _DetailPageState extends State<DetailPage> {
         showAvatar: true,
         showLogo: true,
         onAvatar: () => {},
-        onBack: () => {},
         actions: [
           SNOButton(
               width: context.widthResponsive(80),

@@ -13,4 +13,5 @@ class SNORouteName {
   static const String address = '/address';
   static const String payment = '/payment';
   static const String wishlist = '/wishlist';
+  static const String thankyou = '/thankyou';
 }

@@ -44,12 +44,11 @@ class SNOTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         showCursor: showCursor,
+        expands: onChangedObscure != null ? false : true,
+        maxLines: onChangedObscure != null ? 1 : null,
+        minLines: onChangedObscure != null ? 1 : null,
         textAlign: TextAlign.start,
-        textAlignVertical: onChangedObscure != null
-            ? (obscureText && controller?.value.text != ''
-                ? TextAlignVertical.bottom
-                : TextAlignVertical.center)
-            : null,
+        textAlignVertical: TextAlignVertical.center,
         cursorColor: SNOColors.springGreen,
         style: TextStyle(
           color: SNOColors.white,
@@ -58,13 +57,15 @@ class SNOTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(
-            color: SNOColors.white.withOpacity(0.4),
-            fontSize: context.widthResponsive(12),
+            color: SNOColors.white.withValues(alpha: 0.4),
+            fontSize: context.widthResponsive(14),
           ),
-          icon: SizedBox(
-            width: context.widthResponsive(25),
-            child: Center(child: prefixIcon),
-          ),
+          icon: prefixIcon != null
+              ? SizedBox(
+                  width: context.widthResponsive(25),
+                  child: Center(child: prefixIcon),
+                )
+              : null,
           border: InputBorder.none,
           suffixIcon: onChangedObscure != null
               ? GestureDetector(

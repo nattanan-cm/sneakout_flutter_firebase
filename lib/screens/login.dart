@@ -24,108 +24,109 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return SNOLayout(
+        showBack: false,
         body: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: context.heightResponsive(26),
-                bottom: context.widthResponsive(60),
-              ),
-              child: SvgPicture.asset(
-                SvgPaths.logoLarge,
-              ),
-            ),
-            Image.asset(
-              ImagePaths.iconSneaker,
-              width: context.widthResponsive(190),
-              height: context.heightResponsive(124),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: context.heightResponsive(70),
-                  bottom: context.heightResponsive(55)),
-              child: Column(
-                children: [
-                  SNOTextField(
-                    prefixIcon: SvgPicture.asset(
-                      SvgPaths.email,
-                      width: context.widthResponsive(21),
-                      height: context.heightResponsive(17),
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: context.heightResponsive(26),
+                    bottom: context.widthResponsive(60),
+                  ),
+                  child: SvgPicture.asset(
+                    SvgPaths.logoLarge,
+                  ),
+                ),
+                Image.asset(
+                  ImagePaths.iconSneaker,
+                  width: context.widthResponsive(190),
+                  height: context.heightResponsive(124),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: context.heightResponsive(70),
+                      bottom: context.heightResponsive(55)),
+                  child: Column(
+                    children: [
+                      SNOTextField(
+                        prefixIcon: SvgPicture.asset(
+                          SvgPaths.email,
+                          width: context.widthResponsive(21),
+                          height: context.heightResponsive(17),
+                        ),
+                        hint: "EMAIL",
+                        controller: email_ctl,
+                      ),
+                      SizedBox(
+                        height: context.heightResponsive(19),
+                      ),
+                      SNOTextField(
+                        prefixIcon: SvgPicture.asset(
+                          SvgPaths.lock,
+                          width: context.widthResponsive(16),
+                          height: context.heightResponsive(21),
+                        ),
+                        hint: "PASSWORD",
+                        controller: pwd_ctl,
+                        obscureText: obscureText,
+                        onChangedObscure: (value) {
+                          obscureText = value;
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: context.heightResponsive(50),
+                      bottom: context.heightResponsive(18)),
+                  child: SNOButton(
+                    onPressed: () => onLogin(email_ctl.text, pwd_ctl.text),
+                    child: Text(
+                      'LOG IN',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: context.widthResponsive(16),
+                          fontWeight: FontWeight.w500),
                     ),
-                    hint: "EMAIL",
-                    controller: email_ctl,
                   ),
-                  SizedBox(
-                    height: context.heightResponsive(19),
-                  ),
-                  SNOTextField(
-                    prefixIcon: SvgPicture.asset(
-                      SvgPaths.lock,
-                      width: context.widthResponsive(16),
-                      height: context.heightResponsive(21),
-                    ),
-                    hint: "PASSWORD",
-                    controller: pwd_ctl,
-                    obscureText: obscureText,
-                    onChangedObscure: (value) {
-                      obscureText = value;
-                      setState(() {});
-                    },
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                  top: context.heightResponsive(50),
-                  bottom: context.heightResponsive(18)),
-              child: SNOButton(
-                onPressed: () => onLogin(email_ctl.text, pwd_ctl.text),
-                child: Text(
-                  'LOG IN',
+                ),
+                Text(
+                  'Forgot Password?',
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: context.widthResponsive(16),
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
+                      color: const Color(0xFF06F3E5),
+                      fontSize: context.widthResponsive(15)),
+                )
+              ],
             ),
-            Text(
-              'Forgot Password?',
-              style: TextStyle(
-                  color: const Color(0xFF06F3E5),
-                  fontSize: context.widthResponsive(15)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account? ",
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.4),
+                    fontSize: context.widthResponsive(15),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: onSignUp,
+                  child: Text(
+                    "Sign up",
+                    style: TextStyle(
+                      color: const Color(0xFF00FF85),
+                      fontSize: context.widthResponsive(15),
+                    ),
+                  ),
+                )
+              ],
             )
           ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Don't have an account? ",
-              style: TextStyle(
-                color: Colors.white.withOpacity(0.4),
-                fontSize: context.widthResponsive(15),
-              ),
-            ),
-            GestureDetector(
-              onTap: onSignUp,
-              child: Text(
-                "Sign up",
-                style: TextStyle(
-                  color: const Color(0xFF00FF85),
-                  fontSize: context.widthResponsive(15),
-                ),
-              ),
-            )
-          ],
-        )
-      ],
-    ));
+        ));
   }
 
   void onSignUp() {
