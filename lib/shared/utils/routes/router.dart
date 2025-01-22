@@ -6,6 +6,7 @@ import 'package:sneakout_flutter_firebase/screens/login.dart';
 import 'package:sneakout_flutter_firebase/screens/address.dart';
 import 'package:sneakout_flutter_firebase/screens/payment.dart';
 import 'package:sneakout_flutter_firebase/screens/thankyou.dart';
+import 'package:sneakout_flutter_firebase/screens/wishlist.dart';
 import 'package:sneakout_flutter_firebase/shared/utils/extensions/colors.dart';
 
 import 'route_name.dart';
@@ -30,6 +31,9 @@ class SNORouter {
 
       case SNORouteName.thankyou:
         return _route(const ThankyouPage(), settings);
+
+      case SNORouteName.wishlist:
+        return _route(const WishlistPage(), settings);
 
       default:
         return _route(

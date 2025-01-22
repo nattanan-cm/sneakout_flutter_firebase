@@ -30,7 +30,7 @@ class SneakOutApp extends StatelessWidget {
               breakpoints: ResponsiveDevice.breakpoints,
             ),
         onGenerateRoute: SNORouter.generateRoute,
-        initialRoute: SNORouteName.login);
+        initialRoute: SNORouteName.wishlist);
     // initialRoute: SNORouteName.home);
   }
 }
