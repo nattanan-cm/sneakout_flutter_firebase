@@ -36,7 +36,7 @@ class SNOLayout extends StatelessWidget {
             ? PreferredSize(
                 preferredSize: context.headerSize,
                 child: Padding(
-                  padding: EdgeInsets.only(top: context.heightResponsive(40)),
+                  padding: EdgeInsets.only(top: context.heightResponsive(25)),
                   child: Stack(children: [
                     Positioned(
                       right: 1,
